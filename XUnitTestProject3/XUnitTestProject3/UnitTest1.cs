@@ -20,13 +20,8 @@ namespace XUnitTestProject3
         [Fact]
         public void CoverageConditionsTest()
         {
-            Assert.ThrowsAny<ArgumentOutOfRangeException>(() => new MultipleBinaryFlag(32).SetFlag(33));
             Assert.NotNull(new MultipleBinaryFlag(32));
-
-            Assert.ThrowsAny<ArgumentOutOfRangeException>(() => new MultipleBinaryFlag(34).SetFlag(34));
             Assert.NotNull(new MultipleBinaryFlag(34));
-
-            Assert.ThrowsAny<ArgumentOutOfRangeException>(() => new MultipleBinaryFlag(66).SetFlag(66));
             Assert.NotNull(new MultipleBinaryFlag(66));
         }
 
@@ -61,29 +56,14 @@ namespace XUnitTestProject3
             Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest4.GetType().ToString());
         }
 
-         [Fact]
+        [Fact]
         public void EqualFlagsTest()
         {
-            Assert.NotEqual(FlagTest1, FlagTest2);
-            Assert.NotEqual(FlagTest3, FlagTest4);
-            Assert.NotEqual(FlagTest2, FlagTest4);
+            Assert.NotEqual(FlagTest1.ToString(), FlagTest2.ToString());
+            Assert.NotEqual(FlagTest3.ToString(), FlagTest4.ToString());
+            Assert.NotEqual(FlagTest2.ToString(), FlagTest4.ToString());
 
-            Assert.Equal(FlagTest1.GetFlag(), FlagTest1_1.GetFlag());
-        }
-
-        [Fact]
-        public void NotNullDisposeTest()
-        {
-            FlagTest1.Dispose();
-            FlagTest1_1.Dispose();
-            FlagTest2.Dispose();
-            FlagTest3.Dispose();
-            FlagTest4.Dispose();
-            Assert.NotNull(FlagTest1);
-            Assert.NotNull(FlagTest1_1);
-            Assert.NotNull(FlagTest2);
-            Assert.NotNull(FlagTest3);
-            Assert.NotNull(FlagTest4);
+            Assert.Equal(FlagTest1.ToString(), FlagTest1_1.ToString());
         }
 
         [Fact]
