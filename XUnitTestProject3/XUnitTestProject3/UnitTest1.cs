@@ -47,16 +47,6 @@ namespace XUnitTestProject3
         }
 
         [Fact]
-        public void GetTypeFlagsTest()
-        {
-            Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest1.GetType().ToString());
-            Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest1_1.GetType().ToString());
-            Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest2.GetType().ToString());
-            Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest3.GetType().ToString());
-            Assert.Equal("IIG.BinaryFlag.MultipleBinaryFlag", FlagTest4.GetType().ToString());
-        }
-
-        [Fact]
         public void EqualFlagsTest()
         {
             Assert.NotEqual(FlagTest1.ToString(), FlagTest2.ToString());
